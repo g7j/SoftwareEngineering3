@@ -9,23 +9,21 @@ package com.mycompany.assignment1;
 //some of these were added by default
 import java.util.List;
 import org.joda.time.DateTime;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 /**
  *
  * @author Gerard
  */
 public class StudentTest {
-    
+   //create courses and modules and students to test with 
    private CourseProgram Business, IT, Science, Maths;
    private Module BS101, IT201, SC301, MA401;
    private Student Paul, Bob, David, Shane;
    
+   
+   //create the test
    @Test
    public void usernameTest() {} {
     Business = new CourseProgram("BS1", 28, 8, 2019, 30, 6, 2020);
@@ -49,10 +47,10 @@ public class StudentTest {
     David = new Student("DavidMeaney", 1, 5, 2000, Science);
     Shane = new Student("ShaneRoss", 18, 7, 2000, Maths);
     
-    assertEquals("PaulSmith-23",Paul.getUsername());
-    assertEquals("BobMarley-10",Bob.getUsername());
-    assertEquals("DavidMeaney-1",David.getUsername());
-    assertEquals("ShaneRoss-18",Shane.getUsername());
+    assertEquals("PaulSmith-20",Paul.getUsername());
+    assertEquals("BobMarley-20",Bob.getUsername());
+    assertEquals("DavidMeaney-20",David.getUsername());
+    assertEquals("ShaneRoss-20",Shane.getUsername());
         
     }  
       
