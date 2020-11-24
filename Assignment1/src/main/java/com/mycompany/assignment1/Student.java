@@ -17,68 +17,61 @@ import org.joda.time.*;
 public class Student{
     private String name;
     private int age;
-    private String DOB;
+    private DateTime DOB;
     private String username;
-    private String course;
-    private String module;
+    private CourseProgram courseName;
+    private List<Module> modules = new ArrayList<Module>();
     
-    
-    //set id number as incremental number starting off at 12345678
-private static int incrementalCounter = 12345678;
-private int idNum;
+   
+public Student(String name, int day, int month, int year, CourseProgram course){
 
-//main class
-public Student(String name, int age, String DOB, String username, String course, String module){
-this.name = name;
-this.age = age;
-this.DOB = DOB;
-this.username = username;
-this.course = course;
-this.module = module;
-
-incrementIDNum();
-incrementCounter++;
+    this.name = name;
+    this.DOB = new DateTime(year, month, day, 0, 0); //formate date of birth 
+    this.age = setAge(); //method to get students age from dob
+    this.courseName = course;
+    registerCourse(); //method to register for course
 }
 
 //Getters and Setters
+private int setAge() {
+    DateTime agenow = new DateTime();
+    agenow = DOB.minusYears(agenow.getYear()); //calcualte students age bu taking the current year from date of birth
+    return agenow.getYear();
+    
+}
+
+//method of concatenating students username using their name and age
+public String getUsername(){
+    username = name + Integer.toString(age);
+    return username;
+}
+
+
+private void registerCourse() {
+    modules = this.courseName.getModuleList();
+    this.courseName.addStudentCourse(this);
+    
+}
+
+
 public String getName(){
-    return this.name;
+    return name;
 }
+
 public int getAge(){
-    return this.age;
+    return age;
+    }
+
+public DateTime getDOB(){
+    return DOB;
 }
 
-public String getDOB(){
-    return this.DOB;
+public CourseProgram getCourse(){
+    return courseName;
 }
 
-
-public static void incrementIDNum(){
-    setIDNum(incrementCounter);    
+public List<Module> getModules(){
+    return modules;
 }
-
-public int getIDNum(){
-    return this.idNum;
-}
-
-public void setIDnum(int idNum){
-    this.idNum = idNum;
-}
-
-
-public String geUsername(){
-    return this.username;
-}
-
-public String getCourse(){
-    return this.course;
-}
-
-public String getModule(){
-    return this.module;
-}
-
-//Setters
-
 
 }
