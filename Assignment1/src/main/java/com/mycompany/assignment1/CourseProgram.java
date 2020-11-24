@@ -45,7 +45,7 @@ public class CourseProgram{
     }
 
     //rest of getters and setters
-    public String getCourseCode(){
+    public String getCode(){
         return code;
     }
     public List<Student> getStudentList(){        
