@@ -6,9 +6,6 @@
 package com.mycompany.assignment1;
 
 
-//some of these were added by default
-import java.util.List;
-import org.joda.time.DateTime;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -26,28 +23,28 @@ public class StudentTest {
    //create the test
    @Test
    public void usernameTest() {} {
-    Business = new CourseProgram("BS1", 28, 8, 2019, 30, 6, 2020);
+    Business = new CourseProgram("BS1", 28, 8, 2019, 30, 6, 2020); //make the coruse program with start and end dates
     IT = new CourseProgram("IT1", 28, 8, 2019, 30, 6, 2020);
     Science = new CourseProgram("SC1", 28, 8, 2019, 30, 6, 2020);
     Maths = new CourseProgram("MA1", 28, 8, 2019, 30, 6, 2020);
    
     
-    BS101 = new Module("Business Studies", "BS1");
+    BS101 = new Module("Business Studies", "BS1"); //assign modules info to modules code
     IT201 = new Module("Information Technology", "IT1");
     SC301 = new Module("General Science", "SC1");
     MA401 = new Module("statistics", "MA1");
        
-    Business.addModules(BS101);
+    Business.addModules(BS101); //add modules to the courses
     IT.addModules(IT201);
     Science.addModules(SC301);
     Maths.addModules(MA401);
     
-    Paul = new Student("PaulSmith", 23, 4, 2000, Business);
+    Paul = new Student("PaulSmith", 23, 4, 2000, Business); //create student and assign them to module to test for username
     Bob = new Student("BobMarley", 10, 6, 2000, IT);
     David = new Student("DavidMeaney", 1, 5, 2000, Science);
     Shane = new Student("ShaneRoss", 18, 7, 2000, Maths);
     
-    assertEquals("PaulSmith-20",Paul.getUsername());
+    assertEquals("PaulSmith-20",Paul.getUsername()); //test students username
     assertEquals("BobMarley-20",Bob.getUsername());
     assertEquals("DavidMeaney-20",David.getUsername());
     assertEquals("ShaneRoss-20",Shane.getUsername());

@@ -25,15 +25,16 @@ public class Module {
         this.moduleID = moduleID;
     }
 
+    //method add course module
     public void addCourse(CourseProgram course) {
         this.courses.add(course);
     }
-
-    public void addStudentModule(Student student){
+    //add module to student 
+    public void addModule(Student student){
         this.students.add(student);
     }
     
-
+    //rest of getters and setters
     public String getModuleName(){
         return moduleName;
     }

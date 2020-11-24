@@ -1,3 +1,5 @@
+package com.mycompany.assignment1b;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,7 +24,7 @@ public class StudentDriver {
    public static void main(String[] args){
        createCourses();
        createModules();
-       addCourses(0);
+       addCourses();
        registerStudents();
        
        listModules(Business);
@@ -64,10 +66,10 @@ public class StudentDriver {
             Paul = new Student("PaulSmith", 23, 4, 2000, Business);
             Bob = new Student("BobMarley", 10, 6, 2000, IT);
             David = new Student("DavidMeaney", 1, 5, 2000, Science);
-            Shane = new Student("ShaneRoss", 18, 7, 2000, Maths);           
+        Shane = new Student("ShaneRoss", 18, 7, 2000, Maths);           
        }
        
-        private static void listModules(CourseProgramme course) {
+        private static void listModules(CourseProgram course) {
         System.out.println("Course Code: " + course.getCourseCode() + "\nModules Registered for:");
         for(Module listElement : course.getModuleList()){
             System.out.print(listElement.getModuleName() + "\n");

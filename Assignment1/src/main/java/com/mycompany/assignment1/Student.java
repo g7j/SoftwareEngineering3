@@ -32,10 +32,10 @@ public Student(String name, int day, int month, int year, CourseProgram course){
     registerCourse(); //method to register for course
 }
 
-//Getters and Setters
+//set age of student
 private int setAge() {
     DateTime agenow = new DateTime();
-    agenow = DOB.minusYears(agenow.getYear()); //calcualte students age bu taking the current year from date of birth
+    agenow = DOB.minusYears(agenow.getYear()); //calcualte students age by taking the current year from date of birth
     return agenow.getYear();
     
 }
@@ -46,14 +46,14 @@ public String getUsername(){
     return username;
 }
 
-
+//register student for course
 private void registerCourse() {
     modules = this.courseName.getModuleList();
-    this.courseName.addStudentCourse(this);
+    this.courseName.addCourse(this);
     
 }
 
-
+//rest of getters and setters
 public String getName(){
     return name;
 }

@@ -26,7 +26,7 @@ public class CourseProgram{
     //details for course
     public CourseProgram(String code, int startDay, int startMonth, int startYear, int finishDay, int finishMonth, int finishYear){
         this.code = code;
-        this.startDate = new DateTime(startYear, startMonth, startDay, 0 ,0);
+        this.startDate = new DateTime(startYear, startMonth, startDay, 0 ,0); 
         this.finishDate = new DateTime(finishYear, finishMonth, finishDay, 0, 0);
     }
     
@@ -37,10 +37,10 @@ public class CourseProgram{
     }
     
     //add student to module
-    public void addStudentCourse(Student student){
+    public void addCourse(Student student){
         this.students.add(student);
         for(Module listElement : modules){
-            listElement.addStudentModule(student);
+            listElement.addModule(student);
         }
     }
 
