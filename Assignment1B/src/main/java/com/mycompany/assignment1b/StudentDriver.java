@@ -12,7 +12,7 @@ package com.mycompany.assignment1b;
  */
 
 //its not reading in the info from the other packages for some reason
-//so gonna write the code for what I believe it needs
+//so I copied the code from the other modules and just added them to this project to try to get it to work
 import com.mycompany.assignment1.Student;
 import com.mycompany.assignment1.Module;
 import com.mycompany.assignment1.CourseProgram;
